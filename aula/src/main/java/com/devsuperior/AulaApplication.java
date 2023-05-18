@@ -6,10 +6,10 @@ import com.devsuperior.shippingService.ShippingServiceFrete;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+
 
 @SpringBootApplication
-@ComponentScan({"com.devsuperior"})
+
 public class AulaApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {

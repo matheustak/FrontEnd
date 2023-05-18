@@ -1,15 +1,17 @@
 package com.devsuperior.services;
 
+
 import org.springframework.stereotype.Service;
-import com.devsuperior.Order.*;
-import com.devsuperior.shippingService.ShippingServiceFrete;
+
+import com.devsuperior.Order.Pedido;
+
 
 
 @Service
 public class OrderServices {
 	private double total;
 	
-	ShippingServiceFrete frete;
+	
 	
 	public double total(Pedido  pedido) 
 	{

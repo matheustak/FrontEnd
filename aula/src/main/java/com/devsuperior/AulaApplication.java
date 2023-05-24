@@ -1,7 +1,7 @@
 package com.devsuperior;
 import com.devsuperior.Order.*;
 import com.devsuperior.services.OrderServices;
-import com.devsuperior.shippingService.ShippingServiceFrete;
+
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,17 +18,19 @@ public class AulaApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Pedido  pedido = new Pedido(123,150.0,20.0);
+		Pedido  pedido = new Pedido(123,250.0,20.0);
 		OrderServices os = new OrderServices();
-		ShippingServiceFrete valorfrete = new ShippingServiceFrete();
-		valorfrete.Frete(os.getTotal());
+		os.total(pedido);
 		
 	
-		os.total(pedido);
-		System.out.println("Codigo Produto!"+pedido.getCode());
-		System.out.println("Valor!"+pedido.toString());
-		System.out.println("Valor Com desconto!"+os.getTotal());
-		System.out.println("Valor Com Frete Incluso!"+valorfrete.Frete(os.getTotal()));
+		
+		System.out.println(pedido.toString());
+		
+		System.out.println(os.toString());
+		
+		
+	
+	
 	}
 
 }

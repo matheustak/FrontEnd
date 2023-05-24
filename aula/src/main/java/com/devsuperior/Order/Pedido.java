@@ -48,13 +48,12 @@ public class Pedido {
 		this.discount = discount;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Pedido [valorBasic=" + valorBasic + "]";
+		return "Pedido [code=" + code + "]";
 	}
-	
-	
+
+
 	
 	
 	

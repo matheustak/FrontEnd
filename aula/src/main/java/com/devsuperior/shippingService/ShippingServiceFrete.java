@@ -5,23 +5,25 @@ import org.springframework.stereotype.Service;
 import com.devsuperior.Order.Pedido;
 
 
+
+
 @Service
 public class ShippingServiceFrete {
 	
-	private Double frete;
+	private Double frete = 0.0;
 	
-	Pedido pedido;
+
 	
-		public Double Frete(double valorTotal) 
+		public Double Frete(Pedido valorTotal) 
 		{
 			
-			if(valorTotal <= 100) 
+			if(valorTotal.getValorBasic() <= 100) 
 			{
-				frete = 20.0+ valorTotal;
+				this.frete = 20.0;
 				
-			}else if (valorTotal > 100 & valorTotal <= 200) 
+			}else if (valorTotal.getValorBasic() > 100 & valorTotal.getValorBasic() <= 200) 
 			{
-				frete = 15.0+ valorTotal;
+				this.frete = 12.0;
 			}
 		
 			

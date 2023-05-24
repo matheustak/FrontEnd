@@ -4,6 +4,8 @@ package com.devsuperior.services;
 import org.springframework.stereotype.Service;
 
 import com.devsuperior.Order.Pedido;
+import com.devsuperior.shippingService.ShippingServiceFrete;
+
 
 
 
@@ -11,10 +13,13 @@ import com.devsuperior.Order.Pedido;
 public class OrderServices {
 	private double total;
 	
+
+	 ShippingServiceFrete frete = new ShippingServiceFrete();
+	 
 	
-	
-	public double total(Pedido  pedido) 
+	public void total(Pedido  pedido) 
 	{
+		frete.Frete(pedido);
 		
 		if (pedido.getValorBasic() < 100) 
 		{
@@ -24,20 +29,24 @@ public class OrderServices {
 		else if(pedido.getValorBasic() >= 100 & pedido.getValorBasic() <= 200)
 		{
 			
-			 double porcento =  (pedido.getValorBasic()*20.0)/100;
+			 double porcento =  (pedido.getValorBasic()*pedido.getDiscount())/100;
 			 total = (pedido.getValorBasic() - porcento);
 		
-			 
 			
 		}else if (pedido.getValorBasic() > 200) 
 		{
-			 double porcento =  (pedido.getValorBasic()*10.0)/100;
+			 double porcento =  (pedido.getValorBasic()*pedido.getDiscount())/100;
 			 total = pedido.getValorBasic() - porcento;
+			
 		}
 
-
+		total=total+frete.getFrete();
 		
-		return total;
+		
+	}
+	@Override
+	public String toString() {
+		return "OrderServices [total=" +total + "]";
 	}
 	public double getTotal() {
 		return total;
@@ -46,6 +55,8 @@ public class OrderServices {
 		this.total = total;
 	}
 	
+	
+
 	
 	
 

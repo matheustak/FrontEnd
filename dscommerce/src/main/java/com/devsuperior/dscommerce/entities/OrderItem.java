@@ -47,7 +47,7 @@ public class OrderItem {
 	}
 	
 	
-	public Product getProduct(Product product) 
+	public Product getProduct() 
 	{
 		return id.getProduct();
 		

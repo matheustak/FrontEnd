@@ -39,6 +39,15 @@ public class Categoria {
 	
 	
 	
+	public Categoria(Integer id, String descricao) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+	
+	}
+
+
+
 	public Integer getId() {
 		return id;
 	}

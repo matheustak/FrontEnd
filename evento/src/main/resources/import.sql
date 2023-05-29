@@ -2,7 +2,7 @@ INSERT INTO tb_categoria(descricao) VALUES ('Ingles');
 INSERT INTO tb_categoria(descricao) VALUES ('html');
 
 
-INSERT INTO tb_participante(nome, email)VALUES('matheus rocha', 'matheus@gmail.com');
+INSERT INTO tb_participante(nome, email)VALUES('matheus rocha', 'theus@gmail.com');
 INSERT INTO tb_participante(nome, email)VALUES('Luiz', 'Luiz@gmail.com')
 INSERT INTO tb_participante(nome, email)VALUES('matheus', 'matheus@gmail.com');
 INSERT INTO tb_participante(nome, email)VALUES('fabio', 'fabio@gmail.com')

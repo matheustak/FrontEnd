@@ -44,7 +44,6 @@ public class ProductService {
 	
 	@Transactional
 	public ProductDTO insert( ProductDTO dto){
-		
 		Product entity = new Product();
 		copyDtoToEntity(dto, entity);
 		entity = repository.save(entity);
@@ -53,7 +52,6 @@ public class ProductService {
 	
 	@Transactional
 	public ProductDTO update( Long id, ProductDTO dto){
-		
 		Product entity = repository.getReferenceById(id);
 		copyDtoToEntity(dto, entity);
 		entity = repository.save(entity);
@@ -68,5 +66,13 @@ public class ProductService {
 		
 	}
 	
+	
+	@Transactional
+	public void delete(Long id) 
+	{
+		repository.deleteById(id);
+	}
+	
 
+	
 }

@@ -4,7 +4,6 @@
 package com.devsuperior.dscommerce.controllers;
 
 import java.net.URI;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -34,11 +33,14 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	
+	
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
+	
 		ProductDTO dto = service.findById(id);
 		return ResponseEntity.ok(dto);
-		
+	
 	}
 	
 	@GetMapping
